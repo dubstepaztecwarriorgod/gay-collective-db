@@ -14,9 +14,11 @@ class GayCollectiveDb:
 
     into a map as long as we don't have too many items dictated by `max_capacity()`
     '''
-    def __init__(self, db_path: str) -> None:
+    def __init__(self, db_path: str, flags: DbOptions) -> None:
         self.src: Path = Path(db_path)
         self.data: DbData = None
+        self.flags: DbOptions = flags
     
     def __str__(self):
         return f"Path: {self.src}\nData: {self.data}"
+    
